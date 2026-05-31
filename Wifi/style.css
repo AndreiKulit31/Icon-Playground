@@ -1,0 +1,16 @@
+
+/* Center everything on the entire screen */
+body {
+  margin: 0;                /* Removes default browser spacing */
+  display: flex;
+  justify-content: center;  /* Centers horizontally (left to right) */
+  align-items: center;      /* Centers vertically (top to bottom) */
+  min-height: 100vh;        /* Forces the body to take up the full screen height */
+  background-color: #de57f6; /* Dark background so your white icon is visible */
+}
+
+/* Style the icon */
+.material-symbols-outlined {
+  color: white;             
+  font-size: 400px !important;          /* Optional: Makes the icon larger and easier to see */
+}

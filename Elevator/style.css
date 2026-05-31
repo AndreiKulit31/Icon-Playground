@@ -1,0 +1,26 @@
+body {
+  margin: 0;                
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  min-height: 100vh;        
+  background-color: #656565; 
+  overflow: hidden;         
+}
+
+.elevator {
+  position: absolute;       
+  top: calc(50vh - 75px);   
+  color: white;             
+  font-size: 200px !important; 
+  cursor: pointer;
+  user-select: none;        
+  transition: top 0.05s linear, color 0.2s ease; 
+}
+
+/* --- HORIZONTAL SPACING --- */
+#elevator1 { left: 5%; }
+#elevator2 { left: 24%; }
+#elevator3 { left: 43%; }
+#elevator4 { left: 62%; }
+#elevator5 { left: 81%; }

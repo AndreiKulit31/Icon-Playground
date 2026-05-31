@@ -1,0 +1,71 @@
+.parent-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  min-height: 100vh;       /* Takes up the full screen height */
+}
+
+.gletter{
+    color: #434343
+}
+
+.error{
+    color: #ff4a45;
+}
+
+.speed{
+    color: #fc903a;
+}
+
+.spin{
+    color: #f3ce37;
+}
+
+.recycle{
+    color: #def030;
+}
+
+.face{
+    color: #80e62e;
+}
+
+.turn_right{
+    color: #35e13e;
+}
+
+.cycle{
+    color: #2cd88e;
+}
+
+.sun{
+    color: #3be6ce;
+}
+
+.alphabet{
+    color: #34cdf8;
+}
+
+.wheelchair{
+    color: #3485ff;
+}
+
+.checkbox{
+    color: #3b46ff;
+}
+
+.counter{
+    color: #8951fb;
+}
+
+.wifi{
+    color: #de57f6;
+}
+
+.battery{
+    color: #ff57d6;
+}
+
+
+.arrow{
+    color: #ff5484;
+}

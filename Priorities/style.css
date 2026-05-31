@@ -1,0 +1,23 @@
+
+/* Center everything on the entire screen */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* 33.33% for blue, then pink up to 66.66%, then blue to the end */
+  background: linear-gradient(
+    to right, 
+    #6495ed 0%, 33.33%, 
+    #ff0095 33.33%, 66.66%, 
+    #6495ed 66.66% 100%
+  );
+}
+
+
+/* Style the icon */
+.material-symbols-outlined {
+  color: white;             
+  font-size: 400px !important;          /* Optional: Makes the icon larger and easier to see */
+}

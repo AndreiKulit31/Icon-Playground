@@ -1,0 +1,35 @@
+body {
+  margin: 0;                
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  min-height: 100vh;        
+  background-color: #f3ce37; 
+  overflow: hidden;         
+}
+
+/* 1. Define the "spin" animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.spinner {
+  position: absolute;       
+  top: calc(50vh - 75px);   
+  color: white;             
+  font-size: 200px !important; 
+  cursor: pointer;
+  user-select: none;        
+  transition: top 0.05s linear, color 0.2s ease; 
+  display: inline-block; 
+  
+  /* Modern default state: Ready to spin, but frozen initially */
+  animation: spin 2s linear infinite;
+  animation-play-state: paused; 
+}

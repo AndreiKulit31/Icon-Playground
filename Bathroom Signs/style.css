@@ -1,0 +1,17 @@
+
+/* Center everything on the entire screen */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to left, #ff0095 50%, #6495ed 50%); /* Pink left, blue right */
+}
+
+
+/* Style the icon */
+.material-symbols-outlined {
+  color: white;             
+  font-size: 400px !important;          /* Optional: Makes the icon larger and easier to see */
+}
