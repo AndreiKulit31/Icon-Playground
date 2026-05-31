@@ -5,6 +5,10 @@
   min-height: 100vh;       /* Takes up the full screen height */
 }
 
+.material-symbols-outlined {
+    font-size: 60px !important;
+}
+
 .gletter{
     color: #434343
 }
