@@ -1,0 +1,35 @@
+body {
+  margin: 0;                
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  min-height: 100vh;        
+  background-color: #ff4a45; 
+  overflow: hidden;         
+}
+
+/* Add this once to your global stylesheet */
+@keyframes material-pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2); /* Scales up by 20% */
+  }
+}
+
+
+.material-symbols-outlined {
+  position: absolute;       
+  top: calc(50vh - 75px);   
+  color: white;             
+  font-size: 200px !important; 
+  cursor: pointer;
+  user-select: none;        
+  transition: top 0.05s linear, color 0.2s ease; 
+  display: inline-block; 
+  
+  /* Standard linear infinite is removed */
+  /* New animation: 3 seconds total loop time */
+  animation: stepped-spin 3s infinite; 
+}

@@ -1,0 +1,63 @@
+/* Zero out margins and set a flat background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #3b46ff;
+    font-family: sans-serif;
+}
+
+/* Flat 4x4 Grid - Locked track widths to prevent stretching */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 24px); /* Changed from 1fr to 24px */
+    gap: 60px !important;
+}
+
+/* Clickable touch target sized to match the icons */
+.checkbox-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;  /* Added explicit width */
+    height: 24px; /* Added explicit height */
+}
+
+/* Hide native input completely */
+.checkbox-container input {
+    display: none;
+}
+
+/* Default state colors (High contrast, flat) */
+.checkbox-container .unchecked {
+    display: block;
+    color: #ffffff;
+}
+
+.checkbox-container .checked {
+    display: none;
+    color: #ffffff;
+}
+
+/* Instant State Switching (No transitions/animations) */
+.checkbox-container input:checked ~ .unchecked {
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checked {
+    display: block;
+}
+
+/* 1. Resize the Google Material Icons */
+.material-symbols-outlined {
+  font-size: 60px !important; /* Change this value to adjust the size */
+}
+
+/* 2. Resize the container to fit the larger icons */
+.checkbox-container {
+  width: 60px;
+  height: 60px;
+}
