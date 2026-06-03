@@ -3,7 +3,7 @@ const iconElement = document.getElementById('battery');
 
 // Track keys 1, 2, and 3
 const pressedKeys = { 
-    '0': false, '1': false, '2': false, '3': false, '4': false, '5': false, '6': false, '7': false
+    '0': false, '1': false, '2': false, '3': false, '4': false, '5': false, '6': false, '7': false, '': false
 };
 
 window.addEventListener('keydown', function(event) { 
@@ -31,6 +31,10 @@ function updateIcon() {
       
       console.log(`Key: ${i}, Icon text set to: ${iconElement.innerText}`);
       return; 
+    } else if (pressedKeys['']) {
+        iconElement.innerText = '';
+        console.log(`Key: Spacebar, Icon text set to: ${iconElement.innerText}`);
+        return;
     }
   }
 }

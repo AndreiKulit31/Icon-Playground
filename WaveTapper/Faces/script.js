@@ -4,7 +4,7 @@ const iconElement = document.getElementById('face');
 const pressedKeys = { 
     ArrowUp: false, ArrowDown: false, ArrowLeft: false, ArrowRight: false,
     '1': false, '2': false, '3': false, '4': false, 
-    '5': false
+    '5': false, ' ': false
 };
 
 window.addEventListener('keydown', function(event) { 
@@ -23,7 +23,7 @@ window.addEventListener('keyup', function(event) {
 
 const iconMapping = {
     1:'sentiment_extremely_dissatisfied', 2:'sentiment_dissatisfied', 3:'sentiment_neutral',
-    4:'sentiment_satisfied', 5:'sentiment_very_satisfied'
+    4:'sentiment_satisfied', 5:'sentiment_very_satisfied', ' ': ''
 };
 
 

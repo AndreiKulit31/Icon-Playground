@@ -6,8 +6,7 @@ const pressedKeys = {
     '0': false, '1': false, '2': false, '3': false, '4': false, 
     '5': false, '6': false, '7': false, '8': false, '9': false,
     'x': false, 'arrow_right': false, 
-    '?': false,
-    '!': false // Added '!' to track the exclamation mark key
+    '?': false, '!': false, ' ': false
 };
 
 window.addEventListener('keydown', function(event) { 
@@ -44,6 +43,8 @@ function updateIcon() {
     }
     else if (pressedKeys.ArrowRight) {
         iconElement.innerText = 'arrow_forward';
+    } else if (pressedKeys[' ']) {
+        iconElement.innerText = '';
     }
 
     // 4. Check for number keys

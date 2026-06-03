@@ -1,61 +1,51 @@
 const iconElement = document.getElementById('arrow');
 
-// 1. Create an object to track which keys are currently being held down
-const pressedKeys = {
-    ArrowUp: false,
-    ArrowDown: false,
-    ArrowLeft: false,
-    ArrowRight: false
-};
+// 1. Create a Set to track currently pressed keys
+const pressedKeys = new Set();
 
-// 2. When a key is pressed down, set it to true and check combinations
+// 2. Include ' ' (Spacebar) in the allowed keys list
 window.addEventListener('keydown', function(event) {
-    if (event.key in pressedKeys) {
-        pressedKeys[event.key] = true;
-        updateIcon(); // Run the check function
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(event.key)) {
+        pressedKeys.add(event.key);
+        updateIcon();
     }
 });
 
-// 3. CRITICAL: When a key is released, set it back to false
+// 3. Remove keys when released and update
 window.addEventListener('keyup', function(event) {
-    if (event.key in pressedKeys) {
-        pressedKeys[event.key] = false;
-        updateIcon(); // Run the check function to revert to single arrows
-    }
+    pressedKeys.delete(event.key);
+    updateIcon();
 });
 
-// 4. Function to evaluate key combinations and update the icon text
 function updateIcon() {
-    // --- DIAGONAL COMBINATIONS (Two keys at once) ---
-    if (pressedKeys.ArrowUp && pressedKeys.ArrowLeft) {
-        console.log('Up + Left pressed together!');
-        iconElement.innerText = 'north_west';
-        return; // 'return' stops the function so it doesn't read the single keys below
-    }
-    if (pressedKeys.ArrowUp && pressedKeys.ArrowRight) {
-        console.log('Up + Right pressed together!');
-        iconElement.innerText = 'north_east';
-        return;
-    }
-    if (pressedKeys.ArrowDown && pressedKeys.ArrowLeft) {
-        console.log('Down + Left pressed together!');
-        iconElement.innerText = 'south_west';
-        return;
-    }
-    if (pressedKeys.ArrowDown && pressedKeys.ArrowRight) {
-        console.log('Down + Right pressed together!');
-        iconElement.innerText = 'south_east';
-        return;
+    // 4. Check for Spacebar first so it overrides everything else
+    if (pressedKeys.has(' ')) {
+        iconElement.innerText = '';
+        if (iconGrid.style.display === 'none') {
+          iconGrid.style.display = 'grid'; 
+        } else {
+          iconGrid.style.display = 'none'; 
+        }
+        return; 
     }
 
-    // --- SINGLE KEY COMBINATIONS (Fallback if no diagonals match) ---
-    if (pressedKeys.ArrowUp) {
-        iconElement.innerText = 'arrow_upward';
-    } else if (pressedKeys.ArrowDown) {
-        iconElement.innerText = 'arrow_downward';
-    } else if (pressedKeys.ArrowLeft) {
-        iconElement.innerText = 'arrow_back';
-    } else if (pressedKeys.ArrowRight) {
-        iconElement.innerText = 'arrow_forward';
-    }
+    // 5. If no keys are pressed, change nothing and exit early
+    if (pressedKeys.size === 0) return; 
+
+    const hasUp = pressedKeys.has('ArrowUp');
+    const hasDown = pressedKeys.has('ArrowDown');
+    const hasLeft = pressedKeys.has('ArrowLeft');
+    const hasRight = pressedKeys.has('ArrowRight');
+
+    // --- DIAGONALS ---
+    if (hasUp && hasLeft) { iconElement.innerText = 'north_west'; }
+    else if (hasUp && hasRight) { iconElement.innerText = 'north_east'; }
+    else if (hasDown && hasLeft) { iconElement.innerText = 'south_west'; }
+    else if (hasDown && hasRight) { iconElement.innerText = 'south_east'; }
+    
+    // --- SINGLE KEYS ---
+    else if (hasUp) { iconElement.innerText = 'arrow_upward'; }
+    else if (hasDown) { iconElement.innerText = 'arrow_downward'; }
+    else if (hasLeft) { iconElement.innerText = 'arrow_back'; }
+    else if (hasRight) { iconElement.innerText = 'arrow_forward'; }
 }

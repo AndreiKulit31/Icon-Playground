@@ -2,7 +2,7 @@
 const iconElement = document.getElementById('speed'); 
 
 const pressedKeys = { 
-    '1': false, '2': false, '3': false, '4': false
+    '1': false, '2': false, '3': false, '4': false, ' ': false
 };
 
 window.addEventListener('keydown', function(event) { 
@@ -30,6 +30,8 @@ function updateIcon() {
       iconElement.innerText = `speed${suffix}`; 
       console.log(i)
       return; 
+    } else if (pressedKeys[' ']) {
+        iconElement.innerText = '';
     }
-  }
+}
 }
