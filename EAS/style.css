@@ -1,0 +1,13 @@
+body {
+    background-color: #0051ff;
+}
+
+.material-symbols-outlined {
+    position: absolute; /* Allows free positioning using top/left coordinates */
+    cursor: move;
+    user-select: none; /* Keeps the text "boy" from being highlighted while moving */
+    left: 20px; /* Starting position */
+    top: 20px;  /* Starting position */
+    color: white;
+    font-size: 120px !important;
+}
