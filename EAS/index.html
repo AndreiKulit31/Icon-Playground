@@ -1,17 +1,31 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title> EAS Maker </title>
-
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
         <script src="script.js" defer></script>
     </head>
     <body>
-       <span id = "person" class="material-symbols-outlined" draggable="true">
-            boy
-        </span>
-        <span id="run" class="material-symbols-outlined" draggable="true">
-            directions_run
-        </span>
+        
+        <!-- 🌟 THE FIX: Wrap your icons in the container element so JS can find it -->
+        <div id="container">
+            
+            <!-- Removed spaces from IDs and removed draggable="true" -->
+            <!-- Note: Native draggable="true" conflicts with custom mouse-drag scripts -->
+            <span id="person-container" class="material-symbols-outlined person">
+                boy
+            </span>
+            <span id="run-container" class="material-symbols-outlined run">
+                directions_run
+            </span>
+            <span id="warning-sign-container" class="material-symbols-outlined warning">
+                warning 
+            </span>
+            <span id="female-person-container" class="material-symbols-outlined woman">
+                girl
+            </span>
+        </div>
+
     </body>
 </html>

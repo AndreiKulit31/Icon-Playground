@@ -2,12 +2,37 @@ body {
     background-color: #0051ff;
 }
 
-.material-symbols-outlined {
+#container {
+  position: relative; /* This confines absolute coordinates to stay within this box */
+  width: 100%;
+  height: 100vh;
+}
+
+.material-symbols-outlined, .cloned-element {
     position: absolute; /* Allows free positioning using top/left coordinates */
     cursor: move;
-    user-select: none; /* Keeps the text "boy" from being highlighted while moving */
-    left: 20px; /* Starting position */
-    top: 20px;  /* Starting position */
+    user-select: none; /* Keeps the text from being highlighted while moving */
+
     color: white;
     font-size: 120px !important;
+}
+
+.person {
+    left: 20px; /* Fixed space */
+    top: 20px;  
+}
+
+.run {
+    left: 120px; /* Fixed space */
+    top: 20px;   /* Fixed space */
+}
+
+.warning {
+    left: 220px; /* Fixed space */
+    top: 20px;   /* Fixed space */
+}
+
+.girl {
+    left: 320px;
+    top: 20px;
 }
